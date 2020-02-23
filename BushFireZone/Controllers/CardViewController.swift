@@ -15,14 +15,14 @@ class CardViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        view.backgroundColor = .tertiarySystemBackground
+        view.backgroundColor = UIColor.tertiarySystemBackground.withAlphaComponent(0.8)
         setupLayout()
     }
     
     
     lazy var handle : UIView = {
         let handle = UIView()
-        handle.backgroundColor = .systemGray2
+        handle.backgroundColor = .systemGray3
         handle.frame = CGRect(x: 0, y: 0, width: 50, height: 8)
         handle.layer.cornerRadius = 4
         handle.clipsToBounds = true
@@ -31,11 +31,14 @@ class CardViewController: UIViewController {
     
     lazy var handleArea : UIView = {
         let ha = UIView()
-        ha.backgroundColor = .tertiarySystemBackground
+//        ha.backgroundColor = UIColor.tertiarySystemBackground.withAlphaComponent(0.6)
         return ha
     }()
     
     fileprivate func setupLayout() {
+        
+        view.layer.cornerRadius = 20
+        view.clipsToBounds = true
         
         //handle
         handleArea.addSubview(handle)
