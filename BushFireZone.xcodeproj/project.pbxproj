@@ -9,23 +9,25 @@
 /* Begin PBXBuildFile section */
 		608DA4BD240142B2006C2E18 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 608DA4BC240142B2006C2E18 /* AppDelegate.swift */; };
 		608DA4BF240142B2006C2E18 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 608DA4BE240142B2006C2E18 /* SceneDelegate.swift */; };
-		608DA4C1240142B2006C2E18 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 608DA4C0240142B2006C2E18 /* ViewController.swift */; };
+		608DA4C1240142B2006C2E18 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 608DA4C0240142B2006C2E18 /* MapViewController.swift */; };
 		608DA4C4240142B2006C2E18 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 608DA4C2240142B2006C2E18 /* Main.storyboard */; };
 		608DA4C6240142B8006C2E18 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 608DA4C5240142B8006C2E18 /* Assets.xcassets */; };
 		608DA4C9240142B8006C2E18 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 608DA4C7240142B8006C2E18 /* LaunchScreen.storyboard */; };
 		608DA4D124014592006C2E18 /* Extensions+UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 608DA4D024014592006C2E18 /* Extensions+UIView.swift */; };
+		608DA4D624029B28006C2E18 /* CardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 608DA4D524029B28006C2E18 /* CardViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		608DA4B9240142B2006C2E18 /* BushFireZone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BushFireZone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		608DA4BC240142B2006C2E18 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		608DA4BE240142B2006C2E18 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		608DA4C0240142B2006C2E18 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		608DA4C0240142B2006C2E18 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		608DA4C3240142B2006C2E18 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		608DA4C5240142B8006C2E18 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		608DA4C8240142B8006C2E18 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		608DA4CA240142B8006C2E18 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		608DA4D024014592006C2E18 /* Extensions+UIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Extensions+UIView.swift"; sourceTree = "<group>"; };
+		608DA4D524029B28006C2E18 /* CardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,9 +60,9 @@
 		608DA4BB240142B2006C2E18 /* BushFireZone */ = {
 			isa = PBXGroup;
 			children = (
-				608DA4BC240142B2006C2E18 /* AppDelegate.swift */,
-				608DA4BE240142B2006C2E18 /* SceneDelegate.swift */,
-				608DA4C0240142B2006C2E18 /* ViewController.swift */,
+				608DA4D424029968006C2E18 /* View */,
+				608DA4D324029962006C2E18 /* Model */,
+				608DA4D224029946006C2E18 /* Controllers */,
 				608DA4C2240142B2006C2E18 /* Main.storyboard */,
 				608DA4C5240142B8006C2E18 /* Assets.xcassets */,
 				608DA4C7240142B8006C2E18 /* LaunchScreen.storyboard */,
@@ -68,6 +70,31 @@
 				608DA4D024014592006C2E18 /* Extensions+UIView.swift */,
 			);
 			path = BushFireZone;
+			sourceTree = "<group>";
+		};
+		608DA4D224029946006C2E18 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				608DA4C0240142B2006C2E18 /* MapViewController.swift */,
+				608DA4BE240142B2006C2E18 /* SceneDelegate.swift */,
+				608DA4BC240142B2006C2E18 /* AppDelegate.swift */,
+				608DA4D524029B28006C2E18 /* CardViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		608DA4D324029962006C2E18 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		608DA4D424029968006C2E18 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -141,9 +168,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				608DA4C1240142B2006C2E18 /* ViewController.swift in Sources */,
+				608DA4C1240142B2006C2E18 /* MapViewController.swift in Sources */,
 				608DA4BD240142B2006C2E18 /* AppDelegate.swift in Sources */,
 				608DA4D124014592006C2E18 /* Extensions+UIView.swift in Sources */,
+				608DA4D624029B28006C2E18 /* CardViewController.swift in Sources */,
 				608DA4BF240142B2006C2E18 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
