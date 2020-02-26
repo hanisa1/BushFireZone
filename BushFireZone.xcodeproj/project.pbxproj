@@ -15,6 +15,7 @@
 		608DA4C9240142B8006C2E18 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 608DA4C7240142B8006C2E18 /* LaunchScreen.storyboard */; };
 		608DA4D124014592006C2E18 /* Extensions+UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 608DA4D024014592006C2E18 /* Extensions+UIView.swift */; };
 		608DA4D624029B28006C2E18 /* CardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 608DA4D524029B28006C2E18 /* CardViewController.swift */; };
+		60B58DD924062815001B7676 /* FireIconCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60B58DD824062815001B7676 /* FireIconCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		608DA4CA240142B8006C2E18 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		608DA4D024014592006C2E18 /* Extensions+UIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Extensions+UIView.swift"; sourceTree = "<group>"; };
 		608DA4D524029B28006C2E18 /* CardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardViewController.swift; sourceTree = "<group>"; };
+		60B58DD824062815001B7676 /* FireIconCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FireIconCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +81,7 @@
 				608DA4BE240142B2006C2E18 /* SceneDelegate.swift */,
 				608DA4BC240142B2006C2E18 /* AppDelegate.swift */,
 				608DA4D524029B28006C2E18 /* CardViewController.swift */,
+				60B58DD824062815001B7676 /* FireIconCollectionViewCell.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -170,6 +173,7 @@
 			files = (
 				608DA4C1240142B2006C2E18 /* MapViewController.swift in Sources */,
 				608DA4BD240142B2006C2E18 /* AppDelegate.swift in Sources */,
+				60B58DD924062815001B7676 /* FireIconCollectionViewCell.swift in Sources */,
 				608DA4D124014592006C2E18 /* Extensions+UIView.swift in Sources */,
 				608DA4D624029B28006C2E18 /* CardViewController.swift in Sources */,
 				608DA4BF240142B2006C2E18 /* SceneDelegate.swift in Sources */,

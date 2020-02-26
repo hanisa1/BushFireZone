@@ -32,6 +32,8 @@ class MapViewController: UIViewController, MKMapViewDelegate{
     var runningAnimations = [UIViewPropertyAnimator]()
     var animationProgressWhenInterupted : CGFloat = 0
     
+//    let bushFireZoneImages : UIImage = [#imageLiteral(resourceName: <#T##String#>), #imageLiteral(resourceName: <#T##String#>), #imageLiteral(resourceName: <#T##String#>), #imageLiteral(resourceName: <#T##String#>), #imageLiteral(resourceName: <#T##String#>), #imageLiteral(resourceName: <#T##String#>), #imageLiteral(resourceName: <#T##String#>), #imageLiteral(resourceName: <#T##String#>), #imageLiteral(resourceName: <#T##String#>)]]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
