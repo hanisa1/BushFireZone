@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Foundation
 
 class CardViewController: UIViewController, UICollectionViewDataSource,UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     
@@ -15,9 +16,12 @@ class CardViewController: UIViewController, UICollectionViewDataSource,UICollect
 
         view.backgroundColor = UIColor.tertiarySystemBackground.withAlphaComponent(0.8)
         setupLayout()
+        setUpArlulaAPICall()
     }
     
     let cellID = "cellID"
+    
+    var responseData : Data?
     
     lazy var handle : UIView = {
         let handle = UIView()
@@ -42,6 +46,9 @@ class CardViewController: UIViewController, UICollectionViewDataSource,UICollect
         tl.font = .boldSystemFont(ofSize: 25)
         return tl
     }()
+    
+    // satellite container view
+    let sContainer = UIImageView()
     
     fileprivate func setupLayout() {
         
@@ -73,6 +80,12 @@ class CardViewController: UIViewController, UICollectionViewDataSource,UICollect
         collectionFireView.showsHorizontalScrollIndicator = false
         //register the cell
         collectionFireView.register(FireIconCollectionViewCell.self, forCellWithReuseIdentifier: cellID)
+        
+        //setup satellite imagery contaner
+        
+        sContainer.backgroundColor = .yellow
+        view.addSubview(sContainer)
+        sContainer.anchor(top: collectionFireView.bottomAnchor, leading: view.leadingAnchor, bottom: view.safeAreaLayoutGuide.bottomAnchor, trailing: view.trailingAnchor, padding: .init(top: 20, left: 16, bottom: 20, right: 16))
     }
 
     fileprivate func setupHandleAreaTitle() {
@@ -97,4 +110,46 @@ class CardViewController: UIViewController, UICollectionViewDataSource,UICollect
     }
     
 
+    fileprivate func setUpArlulaAPICall() {
+        
+        let semaphore = DispatchSemaphore (value: 0)
+
+        var request = URLRequest(url: URL(string: "https://api.arlula.com/api/search?start=2019-12-05&end=2020-01-10&res=vhigh&lat=-33.8523&long=151.2108")!,timeoutInterval: Double.infinity)
+        request.addValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
+        request.addValue("Basic VTU3TmdvSVZQekxheEZkTGNjUWwwUEVHYVRNeFk4bDYzZG9keHlEc0xCVFZQQ3piSHZKOFFrOXV1UEdrOmFiY2RlZmdoaWprbG1ub3BxcnN0dXZ3eHl6MTIzNA==", forHTTPHeaderField: "Authorization")
+
+        request.httpMethod = "GET"
+        
+        let task = URLSession.shared.dataTask(with: request) { data, response, error in
+          guard let data = data else {
+            print(String(describing: error))
+            return
+          }
+            //Success!
+//            print(String(data: data, encoding: .utf8)!)
+            
+//            data.forEach { (image) in
+                
+                do {
+                    let sydneySatImages = try
+                        JSONDecoder().decode(Array<City>.self, from: data)
+                    print(sydneySatImages)
+                } catch {
+                    print("Error thrown", error)
+                }
+//            }
+            
+            
+          semaphore.signal()
+        }
+        
+        
+        
+
+        task.resume()
+        semaphore.wait()
+        
+    }
+    
+    
 }
