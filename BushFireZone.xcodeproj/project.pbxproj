@@ -17,7 +17,8 @@
 		608DA4D624029B28006C2E18 /* CardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 608DA4D524029B28006C2E18 /* CardViewController.swift */; };
 		60B58DD924062815001B7676 /* FireIconCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60B58DD824062815001B7676 /* FireIconCollectionViewCell.swift */; };
 		60B58DDB240A7296001B7676 /* CityModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60B58DDA240A7296001B7676 /* CityModel.swift */; };
-		60B58DDD240AF62D001B7676 /* ArlulaCalls.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60B58DDC240AF62D001B7676 /* ArlulaCalls.swift */; };
+		60CE5442240BD45400A2CB67 /* SatelliteCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60CE5441240BD45400A2CB67 /* SatelliteCollectionView.swift */; };
+		60CE5444240BDB9E00A2CB67 /* SatelliteCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60CE5443240BDB9E00A2CB67 /* SatelliteCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,7 +34,8 @@
 		608DA4D524029B28006C2E18 /* CardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardViewController.swift; sourceTree = "<group>"; };
 		60B58DD824062815001B7676 /* FireIconCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FireIconCollectionViewCell.swift; sourceTree = "<group>"; };
 		60B58DDA240A7296001B7676 /* CityModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityModel.swift; sourceTree = "<group>"; };
-		60B58DDC240AF62D001B7676 /* ArlulaCalls.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArlulaCalls.swift; sourceTree = "<group>"; };
+		60CE5441240BD45400A2CB67 /* SatelliteCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SatelliteCollectionView.swift; sourceTree = "<group>"; };
+		60CE5443240BDB9E00A2CB67 /* SatelliteCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SatelliteCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,7 +88,8 @@
 				608DA4BC240142B2006C2E18 /* AppDelegate.swift */,
 				608DA4D524029B28006C2E18 /* CardViewController.swift */,
 				60B58DD824062815001B7676 /* FireIconCollectionViewCell.swift */,
-				60B58DDC240AF62D001B7676 /* ArlulaCalls.swift */,
+				60CE5441240BD45400A2CB67 /* SatelliteCollectionView.swift */,
+				60CE5443240BDB9E00A2CB67 /* SatelliteCell.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -181,10 +184,11 @@
 				608DA4BD240142B2006C2E18 /* AppDelegate.swift in Sources */,
 				60B58DD924062815001B7676 /* FireIconCollectionViewCell.swift in Sources */,
 				608DA4D124014592006C2E18 /* Extensions+UIView.swift in Sources */,
-				60B58DDD240AF62D001B7676 /* ArlulaCalls.swift in Sources */,
 				608DA4D624029B28006C2E18 /* CardViewController.swift in Sources */,
 				608DA4BF240142B2006C2E18 /* SceneDelegate.swift in Sources */,
+				60CE5442240BD45400A2CB67 /* SatelliteCollectionView.swift in Sources */,
 				60B58DDB240A7296001B7676 /* CityModel.swift in Sources */,
+				60CE5444240BDB9E00A2CB67 /* SatelliteCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

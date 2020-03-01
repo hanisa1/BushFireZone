@@ -19,7 +19,8 @@ class CardViewController: UIViewController, UICollectionViewDataSource,UICollect
         setUpArlulaAPICall()
     }
     
-    let cellID = "cellID"
+    let topCellID = "cellID"
+    let bottomCellID = "cellID2"
     
     var responseData : Data?
     
@@ -48,7 +49,10 @@ class CardViewController: UIViewController, UICollectionViewDataSource,UICollect
     }()
     
     // satellite container view
-    let sContainer = UIImageView()
+    let collectionFireView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout())
+    
+    
+    let sContainer = SatelliteCollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout())
     
     fileprivate func setupLayout() {
         
@@ -66,11 +70,9 @@ class CardViewController: UIViewController, UICollectionViewDataSource,UICollect
         handleArea.heightAnchor.constraint(equalToConstant: 65).isActive = true
         setupHandleAreaTitle()
         //setup collectionView
-        let layout = UICollectionViewFlowLayout()
-        layout.scrollDirection = .horizontal
-        layout.minimumLineSpacing = 8
-        let fireViewFrame = CGRect(x: 0, y: 0, width: handleArea.frame.width, height: 100)
-        let collectionFireView = UICollectionView(frame: fireViewFrame, collectionViewLayout: layout)
+//        layout.scrollDirection = .horizontal
+//        layout.minimumLineSpacing = 8
+        
         view.addSubview(collectionFireView)
         collectionFireView.backgroundColor = .clear
         collectionFireView.anchor(top: handleArea.bottomAnchor, leading: view.leadingAnchor, bottom: nil, trailing: view.trailingAnchor, padding: .init(top: 0, left: 16, bottom: 0, right: 16))
@@ -79,13 +81,21 @@ class CardViewController: UIViewController, UICollectionViewDataSource,UICollect
         collectionFireView.dataSource = self
         collectionFireView.showsHorizontalScrollIndicator = false
         //register the cell
-        collectionFireView.register(FireIconCollectionViewCell.self, forCellWithReuseIdentifier: cellID)
-        
+        collectionFireView.register(FireIconCollectionViewCell.self, forCellWithReuseIdentifier: topCellID)
+        if let layoutA = collectionFireView.collectionViewLayout as? UICollectionViewFlowLayout {
+            layoutA.scrollDirection = .horizontal
+            layoutA.minimumLineSpacing = 8
+        }
         //setup satellite imagery contaner
-        
-        sContainer.backgroundColor = .yellow
+        sContainer.register(SatelliteCell.self, forCellWithReuseIdentifier: bottomCellID)
+        if let layoutB = sContainer.collectionViewLayout as? UICollectionViewFlowLayout {
+            layoutB.scrollDirection = .vertical
+            layoutB.minimumLineSpacing = 16
+        }
+        sContainer.delegate = self
+        sContainer.dataSource = self
         view.addSubview(sContainer)
-        sContainer.anchor(top: collectionFireView.bottomAnchor, leading: view.leadingAnchor, bottom: view.safeAreaLayoutGuide.bottomAnchor, trailing: view.trailingAnchor, padding: .init(top: 20, left: 16, bottom: 20, right: 16))
+        sContainer.anchor(top: collectionFireView.bottomAnchor, leading: view.leadingAnchor, bottom: view.safeAreaLayoutGuide.bottomAnchor, trailing: view.trailingAnchor, padding: .init(top: 20, left: 16, bottom: 0, right: 16))
     }
 
     fileprivate func setupHandleAreaTitle() {
@@ -96,17 +106,36 @@ class CardViewController: UIViewController, UICollectionViewDataSource,UICollect
     }
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        if collectionView == self.collectionFireView {
+            return 10
+        }
+
         return 10
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellID, for: indexPath) as! FireIconCollectionViewCell
         
-        return cell
+        if collectionView == self.collectionFireView {
+            let cellA = collectionView.dequeueReusableCell(withReuseIdentifier: topCellID, for: indexPath) as! FireIconCollectionViewCell
+            
+            return cellA
+        } else {
+            let cellB = collectionView.dequeueReusableCell(withReuseIdentifier: bottomCellID, for: indexPath) as! SatelliteCell
+            
+            return cellB
+        }
+        
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: 85, height: 85)
+        if collectionView == self.collectionFireView {
+           
+            return CGSize(width: 85, height: 85)
+        } else {
+            
+            return CGSize(width: sContainer.frame.width, height: sContainer.frame.height)
+        }
+        
     }
     
 
@@ -150,6 +179,8 @@ class CardViewController: UIViewController, UICollectionViewDataSource,UICollect
         semaphore.wait()
         
     }
+    
+    
     
     
 }
