@@ -21,6 +21,11 @@ class CardViewController: UIViewController, UICollectionViewDataSource,UICollect
         
         
         fireIconModels = [sydneyIcon, northCoastIcon, midNorthCoastIcon, hunterIcon, blueMountainsIcon, southernHighlandsIcon, southCoastIcon, riverinaIcon, snowyMountainsIcon]
+        
+        //empty State View
+        let emptyStateView = SatEmptyStateView()
+        emptyStateView.frame = sContainer.bounds
+        sContainer.backgroundView = emptyStateView
     }
     
     let topCellID = "cellID"
@@ -175,12 +180,14 @@ class CardViewController: UIViewController, UICollectionViewDataSource,UICollect
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        self.sContainer.backgroundView = UIView()
         if collectionView == self.collectionFireView {
             print("Fire icon selected")
             //animate scroll to top
             self.sContainer.setContentOffset(CGPoint(x:0,y:0), animated: true)
             setUpArlulaAPICall(cityName: fireIconModels[indexPath.item].name, lat: fireIconModels[indexPath.item].lat, long: fireIconModels[indexPath.item].long, res: "vhigh")
             self.sContainer.reloadData()
+            
         }
         
     }
@@ -235,7 +242,7 @@ class CardViewController: UIViewController, UICollectionViewDataSource,UICollect
         task.resume()
         semaphore.wait()
         if self.thumbnailArray.isEmpty {
-            print("No images in \(cityName)")
+            print("No images in \(cityName), fetching lower resolution.")
             self.setUpArlulaAPICall(cityName: cityName, lat: lat, long: long, res: "low")
         }
     }

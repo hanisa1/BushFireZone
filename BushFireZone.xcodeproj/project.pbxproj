@@ -18,6 +18,7 @@
 		60B58DD924062815001B7676 /* FireIconCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60B58DD824062815001B7676 /* FireIconCollectionViewCell.swift */; };
 		60B58DDB240A7296001B7676 /* CityModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60B58DDA240A7296001B7676 /* CityModel.swift */; };
 		60B6980F240CC03F00F1020B /* FireIconModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60B6980E240CC03F00F1020B /* FireIconModel.swift */; };
+		60B69811240D082300F1020B /* SatEmptyStateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60B69810240D082300F1020B /* SatEmptyStateView.swift */; };
 		60CE5442240BD45400A2CB67 /* SatelliteCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60CE5441240BD45400A2CB67 /* SatelliteCollectionView.swift */; };
 		60CE5444240BDB9E00A2CB67 /* SatelliteCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60CE5443240BDB9E00A2CB67 /* SatelliteCell.swift */; };
 		970E808A28D4F1930E2CCC79 /* Pods_BushFireZone.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 79541EA2F27C218C8D80BA12 /* Pods_BushFireZone.framework */; };
@@ -38,6 +39,7 @@
 		60B58DD824062815001B7676 /* FireIconCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FireIconCollectionViewCell.swift; sourceTree = "<group>"; };
 		60B58DDA240A7296001B7676 /* CityModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityModel.swift; sourceTree = "<group>"; };
 		60B6980E240CC03F00F1020B /* FireIconModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FireIconModel.swift; sourceTree = "<group>"; };
+		60B69810240D082300F1020B /* SatEmptyStateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SatEmptyStateView.swift; sourceTree = "<group>"; };
 		60CE5441240BD45400A2CB67 /* SatelliteCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SatelliteCollectionView.swift; sourceTree = "<group>"; };
 		60CE5443240BDB9E00A2CB67 /* SatelliteCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SatelliteCell.swift; sourceTree = "<group>"; };
 		79541EA2F27C218C8D80BA12 /* Pods_BushFireZone.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BushFireZone.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -124,6 +126,7 @@
 		608DA4D424029968006C2E18 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				60B69810240D082300F1020B /* SatEmptyStateView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -261,6 +264,7 @@
 				60CE5442240BD45400A2CB67 /* SatelliteCollectionView.swift in Sources */,
 				60B58DDB240A7296001B7676 /* CityModel.swift in Sources */,
 				60CE5444240BDB9E00A2CB67 /* SatelliteCell.swift in Sources */,
+				60B69811240D082300F1020B /* SatEmptyStateView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
