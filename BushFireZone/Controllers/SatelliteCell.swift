@@ -18,6 +18,10 @@ class SatelliteCell: UICollectionViewCell {
     
     lazy var satImageView : UIImageView = {
         let siv = UIImageView()
+        siv.contentMode = .scaleAspectFill
+        siv.clipsToBounds = true
+        siv.layer.masksToBounds = true
+        siv.layer.cornerRadius = 10
         return siv
     }()
     

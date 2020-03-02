@@ -22,7 +22,7 @@ class MapViewController: UIViewController, MKMapViewDelegate{
     var visualEffectView : UIVisualEffectView!
     
     let cardHeight : CGFloat = 600
-    let cardHandleAreaHeight : CGFloat = 165
+    let cardHandleAreaHeight : CGFloat = 208
     
     var cardVisible = false
     var nextState : CardState {
@@ -32,7 +32,7 @@ class MapViewController: UIViewController, MKMapViewDelegate{
     var runningAnimations = [UIViewPropertyAnimator]()
     var animationProgressWhenInterupted : CGFloat = 0
     
-//    let bushFireZoneImages : UIImage = [#imageLiteral(resourceName: <#T##String#>), #imageLiteral(resourceName: <#T##String#>), #imageLiteral(resourceName: <#T##String#>), #imageLiteral(resourceName: <#T##String#>), #imageLiteral(resourceName: <#T##String#>), #imageLiteral(resourceName: <#T##String#>), #imageLiteral(resourceName: <#T##String#>), #imageLiteral(resourceName: <#T##String#>), #imageLiteral(resourceName: <#T##String#>)]]
+
     
     override func viewDidLoad() {
         super.viewDidLoad()

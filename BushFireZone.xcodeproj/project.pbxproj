@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -17,11 +17,14 @@
 		608DA4D624029B28006C2E18 /* CardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 608DA4D524029B28006C2E18 /* CardViewController.swift */; };
 		60B58DD924062815001B7676 /* FireIconCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60B58DD824062815001B7676 /* FireIconCollectionViewCell.swift */; };
 		60B58DDB240A7296001B7676 /* CityModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60B58DDA240A7296001B7676 /* CityModel.swift */; };
+		60B6980F240CC03F00F1020B /* FireIconModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60B6980E240CC03F00F1020B /* FireIconModel.swift */; };
 		60CE5442240BD45400A2CB67 /* SatelliteCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60CE5441240BD45400A2CB67 /* SatelliteCollectionView.swift */; };
 		60CE5444240BDB9E00A2CB67 /* SatelliteCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60CE5443240BDB9E00A2CB67 /* SatelliteCell.swift */; };
+		970E808A28D4F1930E2CCC79 /* Pods_BushFireZone.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 79541EA2F27C218C8D80BA12 /* Pods_BushFireZone.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0F4BED15FF19C0C2AA71125F /* Pods-BushFireZone.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BushFireZone.release.xcconfig"; path = "Target Support Files/Pods-BushFireZone/Pods-BushFireZone.release.xcconfig"; sourceTree = "<group>"; };
 		608DA4B9240142B2006C2E18 /* BushFireZone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BushFireZone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		608DA4BC240142B2006C2E18 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		608DA4BE240142B2006C2E18 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -34,8 +37,11 @@
 		608DA4D524029B28006C2E18 /* CardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardViewController.swift; sourceTree = "<group>"; };
 		60B58DD824062815001B7676 /* FireIconCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FireIconCollectionViewCell.swift; sourceTree = "<group>"; };
 		60B58DDA240A7296001B7676 /* CityModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityModel.swift; sourceTree = "<group>"; };
+		60B6980E240CC03F00F1020B /* FireIconModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FireIconModel.swift; sourceTree = "<group>"; };
 		60CE5441240BD45400A2CB67 /* SatelliteCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SatelliteCollectionView.swift; sourceTree = "<group>"; };
 		60CE5443240BDB9E00A2CB67 /* SatelliteCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SatelliteCell.swift; sourceTree = "<group>"; };
+		79541EA2F27C218C8D80BA12 /* Pods_BushFireZone.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BushFireZone.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9CF6312C9046591F679C8D7F /* Pods-BushFireZone.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BushFireZone.debug.xcconfig"; path = "Target Support Files/Pods-BushFireZone/Pods-BushFireZone.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,17 +49,29 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				970E808A28D4F1930E2CCC79 /* Pods_BushFireZone.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		15AD4C3E7BE45B00D73E89A1 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				9CF6312C9046591F679C8D7F /* Pods-BushFireZone.debug.xcconfig */,
+				0F4BED15FF19C0C2AA71125F /* Pods-BushFireZone.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		608DA4B0240142B2006C2E18 = {
 			isa = PBXGroup;
 			children = (
 				608DA4BB240142B2006C2E18 /* BushFireZone */,
 				608DA4BA240142B2006C2E18 /* Products */,
+				15AD4C3E7BE45B00D73E89A1 /* Pods */,
+				D769E5D6BE02AE39135D863C /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -98,6 +116,7 @@
 			isa = PBXGroup;
 			children = (
 				60B58DDA240A7296001B7676 /* CityModel.swift */,
+				60B6980E240CC03F00F1020B /* FireIconModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -109,6 +128,14 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		D769E5D6BE02AE39135D863C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				79541EA2F27C218C8D80BA12 /* Pods_BushFireZone.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -116,9 +143,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 608DA4CD240142B8006C2E18 /* Build configuration list for PBXNativeTarget "BushFireZone" */;
 			buildPhases = (
+				01897D15E0DC0614E8ACC156 /* [CP] Check Pods Manifest.lock */,
 				608DA4B5240142B2006C2E18 /* Sources */,
 				608DA4B6240142B2006C2E18 /* Frameworks */,
 				608DA4B7240142B2006C2E18 /* Resources */,
+				CBFAC991702D1C046532B74F /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -175,6 +204,48 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		01897D15E0DC0614E8ACC156 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-BushFireZone-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CBFAC991702D1C046532B74F /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-BushFireZone/Pods-BushFireZone-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-BushFireZone/Pods-BushFireZone-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-BushFireZone/Pods-BushFireZone-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		608DA4B5240142B2006C2E18 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -186,6 +257,7 @@
 				608DA4D124014592006C2E18 /* Extensions+UIView.swift in Sources */,
 				608DA4D624029B28006C2E18 /* CardViewController.swift in Sources */,
 				608DA4BF240142B2006C2E18 /* SceneDelegate.swift in Sources */,
+				60B6980F240CC03F00F1020B /* FireIconModel.swift in Sources */,
 				60CE5442240BD45400A2CB67 /* SatelliteCollectionView.swift in Sources */,
 				60B58DDB240A7296001B7676 /* CityModel.swift in Sources */,
 				60CE5444240BDB9E00A2CB67 /* SatelliteCell.swift in Sources */,
@@ -330,6 +402,7 @@
 		};
 		608DA4CE240142B8006C2E18 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9CF6312C9046591F679C8D7F /* Pods-BushFireZone.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -348,6 +421,7 @@
 		};
 		608DA4CF240142B8006C2E18 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0F4BED15FF19C0C2AA71125F /* Pods-BushFireZone.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
