@@ -12,7 +12,20 @@ class SatelliteCell: UICollectionViewCell {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        backgroundColor = .green
+        
+        setupLayout()
+    }
+    
+    lazy var satImageView : UIImageView = {
+        let siv = UIImageView()
+        return siv
+    }()
+    
+    fileprivate func setupLayout() {
+        
+        addSubview(satImageView)
+        satImageView.fillSuperview()
+        
     }
     
     required init?(coder: NSCoder) {

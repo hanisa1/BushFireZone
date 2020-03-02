@@ -9,6 +9,7 @@
 import UIKit
 import Foundation
 
+
 class CardViewController: UIViewController, UICollectionViewDataSource,UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     
     override func viewDidLoad() {
@@ -47,6 +48,9 @@ class CardViewController: UIViewController, UICollectionViewDataSource,UICollect
         tl.font = .boldSystemFont(ofSize: 25)
         return tl
     }()
+    
+    //create array of thumbnails for each City
+    var sydneyThumbnailArray = [String]()
     
     // satellite container view
     let collectionFireView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout())
@@ -110,7 +114,7 @@ class CardViewController: UIViewController, UICollectionViewDataSource,UICollect
             return 10
         }
 
-        return 10
+        return sydneyThumbnailArray.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -121,6 +125,9 @@ class CardViewController: UIViewController, UICollectionViewDataSource,UICollect
             return cellA
         } else {
             let cellB = collectionView.dequeueReusableCell(withReuseIdentifier: bottomCellID, for: indexPath) as! SatelliteCell
+            
+            cellB.satImageView.image = UIImage(named: sydneyThumbnailArray[indexPath.item])
+            
             
             return cellB
         }
@@ -162,7 +169,13 @@ class CardViewController: UIViewController, UICollectionViewDataSource,UICollect
                 do {
                     let sydneySatImages = try
                         JSONDecoder().decode(Array<City>.self, from: data)
-                    print(sydneySatImages)
+
+                    for object in sydneySatImages {
+//                        print(object.thumbnail)
+                        //Append each thumbnail image to the sydney array
+                        self.sydneyThumbnailArray.append(object.thumbnail)
+                        
+                    }
                 } catch {
                     print("Error thrown", error)
                 }
