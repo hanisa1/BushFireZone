@@ -9,7 +9,9 @@
 import UIKit
 import MapKit
 
-class MapViewController: UIViewController, MKMapViewDelegate{
+class MapViewController: UIViewController, MKMapViewDelegate, MapViewZoomDelegate{
+    
+    
 
     //Setting up dynamic CardView
     
@@ -41,20 +43,32 @@ class MapViewController: UIViewController, MKMapViewDelegate{
         setUpLayout()
         addAnnotations()
         setupCard()
+        cardViewController.zoomDelegate = self
     }
 
-    // Set up annotations for each Bush Fire Zone
     
+    // Set up annotations for each Bush Fire Zone
+    let mapView : MKMapView = {
+        let mapView = MKMapView()
+        mapView.region = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: -33.872760, longitude: 151.205340), span: .init(latitudeDelta: 10, longitudeDelta: 10 ))
+        return mapView
+    }()
+    
+    func didSelectCityZoomIn(lat: Double, long: Double) {
+        print("Hello from Map kit controller")
+        let region = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: lat, longitude: long), span: .init(latitudeDelta: 2, longitudeDelta: 2 ))
+        
+        
+        mapView.setRegion(region, animated: false)
+//        self.mapView.setVisibleMapRect(self.mapView.visibleMapRect, edgePadding: UIEdgeInsets(top: 40.0, left: 20.0, bottom: 20, right: 20.0), animated: true)
+    }
     
     fileprivate func addAnnotations() {
         
-        let mapView = MKMapView()
-                mapView.delegate = self
-                view.addSubview(mapView)
-                mapView.region = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: -33.872760, longitude: 151.205340), span: .init(latitudeDelta: 10, longitudeDelta: 10 ))
-                mapView.fillSuperview()
-                
-                
+        view.addSubview(mapView)
+        mapView.fillSuperview()
+        mapView.delegate = self
+        
         
         let sydneyAnnotation = MKPointAnnotation()
         sydneyAnnotation.title = "Sydney"
@@ -217,5 +231,7 @@ class MapViewController: UIViewController, MKMapViewDelegate{
     }
     
 
+    
+    
 }
 

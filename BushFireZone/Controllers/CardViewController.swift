@@ -11,11 +11,16 @@ import Foundation
 import SDWebImage
 
 
+protocol MapViewZoomDelegate {
+    func didSelectCityZoomIn(lat: Double, long: Double)
+}
+
 class CardViewController: UIViewController, UICollectionViewDataSource,UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         view.backgroundColor = UIColor.tertiarySystemBackground.withAlphaComponent(0.8)
         setupLayout()
         
@@ -27,6 +32,8 @@ class CardViewController: UIViewController, UICollectionViewDataSource,UICollect
         emptyStateView.frame = sContainer.bounds
         sContainer.backgroundView = emptyStateView
     }
+    
+    var zoomDelegate: MapViewZoomDelegate?
     
     let topCellID = "cellID"
     let bottomCellID = "cellID2"
@@ -183,6 +190,8 @@ class CardViewController: UIViewController, UICollectionViewDataSource,UICollect
         self.sContainer.backgroundView = UIView()
         if collectionView == self.collectionFireView {
             print("Fire icon selected")
+            // zoom into map
+            zoomDelegate?.didSelectCityZoomIn(lat: fireIconModels[indexPath.item].lat, long: fireIconModels[indexPath.item].long)
             //animate scroll to top
             self.sContainer.setContentOffset(CGPoint(x:0,y:0), animated: true)
             setUpArlulaAPICall(cityName: fireIconModels[indexPath.item].name, lat: fireIconModels[indexPath.item].lat, long: fireIconModels[indexPath.item].long, res: "vhigh")
